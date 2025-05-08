@@ -18,6 +18,7 @@ body {
 }
 
 nav {
+    width: 100%;
     height: 80px;
     display: flex;
 }
@@ -30,7 +31,7 @@ img {
     display: flex;
     width: 100%;
     max-width: 1200px;
-    justify-content: ;
+    justify-content: space-between;
     align-items: center;
     padding: 0 24px;
     margin: 0 auto;
@@ -73,6 +74,65 @@ li {
 .nav__link--primary:hover {
     text-decoration: none;
 }
+
+.btn__menu {
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #7342d6;
+    display: none;
+}
+
+.menu__backdrop {
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop {
+    display: flex;
+    opacity: 1;
+}
+
+.menu--open {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list {
+    padding: 32px 0;
+}
+
+.menu__link {
+    color: white;
+    font-size: 40px;
+}
+
+.btn__menu--close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: white;
+}
+
+/* Landing */
 
 #landing {
     background-color: rgba(115,66,214,0.1);
@@ -204,8 +264,8 @@ transform: translateY(-100%);
 }
 
 .highlight__wrapper {
-
-    display: flex;
+ display: flex;
+ flex-wrap: wrap;
 }
 
 .highlight {
@@ -214,7 +274,7 @@ transform: translateY(-100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
 }
 
 .highlight__para {
@@ -238,6 +298,7 @@ transform: translateY(-100%);
 .highlight__subtitle {
     font-size: 20px;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 /* Features */
@@ -351,4 +412,48 @@ figure {
 
 .footer__link {
     padding: 0 8px;
+}
+
+/* Small Phones Tablets Large Smartphones */
+
+@media (max-width: 768px) {
+   .header__description {
+    padding: 0 24px;
+   }
+
+   h1 {
+    font-size: 40px;
+   }
+
+   h2 {
+    font-size: 26px;
+   }
+
+   button {
+    font-size: 18px;
+   }
+
+   .book {
+    width: 50%;
+   }
+}
+
+/* Small Phones Large Smartphones */
+
+@media (max-width: 550px) {
+    .nav__links {
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+
+.highlight {
+   width: 100%; 
+}
+
+.highlight: not(:last-child)
+margin-bottom: 24px;
+
 }
